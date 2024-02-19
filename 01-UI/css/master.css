@@ -27,6 +27,8 @@ main {
 
         }
     }
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* H O M E   P A G E */
     section.homepage {
         display: flex;
         flex-direction: column;
@@ -57,8 +59,12 @@ main {
         }
     }
 
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* L O G I N   &   R E G I S T E R   &   C R E A T E */
     section.login,
-    section.register {
+    section.register,
+    section.create,
+    section.edit {
         menu {
             padding: 0;
             display: flex;
@@ -86,6 +92,7 @@ main {
         form {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 2.2rem;
             margin-top: 40px;
 
@@ -139,6 +146,8 @@ main {
         }
     }
 
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* R E G I S T E R */
     section.register {
         menu {
             a:first-child {
@@ -169,6 +178,8 @@ main {
         }
     }
 
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* D A S H B O A R D */
     section.dashboard {
         h1 {
             font-size: 28px;
@@ -220,6 +231,8 @@ main {
         }
     }
 
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* M O D U L E S */
     section.module {
         h1 {
             font-size: 28px;
@@ -227,6 +240,22 @@ main {
             text-align: center;
             text-transform: uppercase;
             margin: 2.4rem 0;
+        }
+
+        a.add:is(:link, :visited) {
+            background-color: var(--color-sec);
+            border-radius: 40px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease-in;
+            &:is(:hover) {
+                transform: scale(1.05);
+            }
         }
 
         table {
@@ -261,6 +290,66 @@ main {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* C R E A T E   &   E D I T   &   S H O W  */
+    section.create,
+    section.edit,
+    section.show {
+        h1 {
+            font-size: 28px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 2.4rem 0;
+        }
+
+        form {
+            img#upload {
+                border-radius: 200px;
+                border: 2px solid #fff;
+                cursor: pointer;
+                height: 240px;
+                transition: all 0.4s ease-out;
+                width: 240px;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            input#photo {
+                display: none;
+            }
+        }
+    }
+
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* S H O W  */
+    section.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img.photo {
+            border-radius: 200px;
+            border: 2px solid #fff;
+        }
+        div.info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1rem;
+            row-gap: 1rem;
+            margin-top: 1rem;
+
+            p {
+                border-radius: 50px;
+                font-size: 18px;
+                background-color: var(--color-frd);
+                padding: 10px;
+                margin: 0;
+                width: 200px;
             }
         }
     }
