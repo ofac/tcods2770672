@@ -169,6 +169,13 @@ main {
         align-items: center;
         justify-content: space-between;
         width: 400px;
+
+        a:first-of-type {
+            transition: all 0.2s ease-in;
+            &:hover {
+                transform: translate(-10px);
+            }
+        }
     }
 
     header.nav.level-0 {
@@ -270,13 +277,14 @@ main {
                     border-radius: 20px;
                     background-color: var(--color-trd);
                     display: flex;
+                    padding: 14px 14px 8px 14px;
                     justify-content: space-between;
                     align-items: center;
                     &:nth-last-child(even) {
                         background-color: var(--color-frd);
                     }
                     td {
-                        padding: 16px;
+                        padding: 0px;
                         a:is(:link, :visited) {
                             text-decoration: none;
                             img {
@@ -287,6 +295,15 @@ main {
                         a:is(:hover) img {
                             transform: scale(1);
 
+                        }
+                    }
+                    td:nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        width: 160px;
+                        span:last-child {
+                            font-weight: 300;
+                            font-size: 14px;
                         }
                     }
                 }
@@ -311,6 +328,7 @@ main {
             img#upload {
                 border-radius: 200px;
                 border: 2px solid #fff;
+                object-fit: cover;
                 cursor: pointer;
                 height: 240px;
                 transition: all 0.4s ease-out;
