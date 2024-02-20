@@ -371,6 +371,86 @@ main {
             }
         }
     }
+
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* P E T S  */
+    div.pets {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+
+        article {
+            border-radius: 20px;
+            background-color: var(--color-trd);
+            padding: 16px;
+            width: 160px;
+            header {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+                img {
+                    margin-top: 0;
+                    width: 80px;
+                }
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    span:last-child {
+                        font-weight: 300;
+                        font-size: 14px;
+                    }
+                }
+            }
+            footer {
+                display: flex;
+                justify-content: center;
+                margin-top: 1rem;
+                a:is(:link, :visited) {
+                    background-color: var(--color-pri);
+                    border-radius: 20px;
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    text-decoration: none;
+                    width: 120px;
+                    transition: all 0.4s ease-in;
+                    padding: 4px;
+                }
+                a:is(:hover) {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        article:nth-child(odd) {
+            background-color: var(--color-frd);
+        }
+
+    }
+
+    .btn {
+        align-items: center;
+        border: 2px solid var(--color-sec);
+        border-radius: 50px;
+        background-color: var(--color-sec);
+        color: #fff;
+        display: flex;
+        height: 80px;
+        font-size: 32px;
+        font-weight: 400;
+        justify-content: center;
+        margin: 1rem 0;
+        transition: all 0.4s ease-in;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 380px;
+    }
+    .btn:is(:hover) {
+        border: 2px solid #fff;
+        background-color: var(--color-pri);
+        cursor: pointer;
+        color: #fff;
+    }
     
 }
 
