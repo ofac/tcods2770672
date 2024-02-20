@@ -426,7 +426,7 @@ main {
                 }
             }
         }
-        article:nth-child(odd) {
+        article.bgcolor {
             background-color: var(--color-frd);
         }
 
