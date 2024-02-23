@@ -33,19 +33,21 @@
                 <tbody>
                 <?php foreach($pets as $pet): ?>
                     <tr>
-                        <td><img src="<?php echo URLIMGS . "/" . $pet['photo'] ?>" alt="Pet"></td>
+                        <td>
+                            <img src="<?php echo URLIMGS . "/" . $pet['photo'] ?>" alt="Pet">
+                        </td>
                         <td>
                             <span><?php echo $pet['name'] ?></span>
                             <span><?php echo $pet['kind'] ?></span>
                         </td>
                         <td>
-                            <a href="show.html" class="show">
+                            <a href="show.php?id=<?=$pet['id']?>" class="show">
                                 <img src="<?php echo URLIMGS . "/ico-show.svg" ?>" alt="Show">
                             </a>
-                            <a href="edit.html" class="edit">
+                            <a href="edit.php?id=<?=$pet['id']?>" class="edit">
                                 <img src="<?php echo URLIMGS . "/ico-edit.svg" ?>" alt="Edit">
                             </a>
-                            <a href="javascript:;" class="delete">
+                            <a href="javascript:;" class="delete" data-id="<?=$pet['id']?>">
                                 <img src="<?php echo URLIMGS . "/ico-delete.svg" ?>" alt="Delete">
                             </a>
                         </td>
@@ -55,11 +57,23 @@
             </table>
         </section>
     </main>
-    <script src="../../js/sweetalert2.js"></script>
-    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo URLJS . "/sweetalert2.js" ?>"></script>
+    <script src="<?php echo URLJS . "/jquery-3.7.1.min.js" ?>"></script>
     <script>
         $(document).ready(function () {
+
+            <?php if(isset($_SESSION['msg'])): ?>
+                Swal.fire({
+                    title: "Congratulations!",
+                    text: "<?php echo $_SESSION['msg'] ?>",
+                    icon: "success",
+                    timer: 5000
+                })
+                <?php unset($_SESSION['msg']) ?>
+            <?php endif ?>
+
             $('body').on('click', '.delete', function () {
+                $id = $(this).attr('data-id')
                 Swal.fire({
                     title: "Are you sure?",
                     text: "You won't be able to revert this!",
