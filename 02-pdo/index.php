@@ -64,9 +64,11 @@
 
             <?php if(isset($_SESSION['msg'])): ?>
                 Swal.fire({
+                    position: "top-end",
                     title: "Congratulations!",
                     text: "<?php echo $_SESSION['msg'] ?>",
                     icon: "success",
+                    showConfirmButton: false,
                     timer: 5000
                 })
                 <?php unset($_SESSION['msg']) ?>
