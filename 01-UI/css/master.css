@@ -93,7 +93,7 @@ main {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2.2rem;
+            gap: 1rem;
             margin-top: 40px;
             margin-bottom: 1rem;
 
@@ -108,9 +108,9 @@ main {
             input {
                 background-color: #fffb;
                 color: var(--color-pri);
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 400;
-                padding: 25px 20px;
+                padding: 20px;
                 transition: all 0.5s ease-in;
                 width: 340px;
                 &::placeholder {
@@ -129,7 +129,7 @@ main {
                 background-color: var(--color-sec);
                 color: #fff;
                 display: flex;
-                height: 80px;
+                height: 60px;
                 font-size: 32px;
                 font-weight: 400;
                 justify-content: center;
