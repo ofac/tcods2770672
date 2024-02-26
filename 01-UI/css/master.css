@@ -365,6 +365,9 @@ main {
         img.photo {
             border-radius: 200px;
             border: 2px solid #fff;
+            object-fit: cover;
+            height: 280px;
+            width: 280px;
         }
         div.info {
             display: grid;
