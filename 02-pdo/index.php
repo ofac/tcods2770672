@@ -86,12 +86,7 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "The pet was deleted.",
-                            icon: "success",
-                            confirmButtonColor: "#1f7a8c"
-                        })
+                        window.location.replace('delete.php?id=' + $id)
                     }
                 })
             })
