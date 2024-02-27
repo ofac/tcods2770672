@@ -12,3 +12,4 @@
 |04. Mockup | Final Design |
 |05. Layout | (html & css)) |
 
+[Drive -> Slides PDF](https://drive.google.com/drive/folders/1cUEOsM44rpspMfyWvY_YlnXlIm9uffej?usp=share_link)

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-02-2024 a las 18:22:21
+-- Tiempo de generación: 26-02-2024 a las 23:40:29
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -43,7 +43,7 @@ CREATE TABLE `pets` (
 --
 
 INSERT INTO `pets` (`id`, `name`, `photo`, `kind`, `weight`, `age`, `breed`, `location`) VALUES
-(1, 'Firulais', 'ico-pet.svg', 'Dog', 25, 3, 'Galgo', 'Manizales'),
+(1, 'Firulais', '1708984846.png', 'Dog', 25, 3, 'Galgo', 'Manizales'),
 (2, 'Michi', 'ico-pet.svg', 'Cat', 8, 2, 'Persa', 'Pereira'),
 (3, 'Toby', 'ico-pet.svg', 'Dog', 18, 5, 'Puddle', 'Armenia'),
 (4, 'Pocholo', '1708697222.png', 'Dog', 10, 2, 'Pug', 'Manizales'),
