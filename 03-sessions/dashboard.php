@@ -2,6 +2,11 @@
     require "config/app.php";
     require "config/database.php";
 
+    if(!isset($_SESSION['uid'])) {
+        $_SESSION['error'] = "Please login first to access dashboard.";
+        header("location: index.php");
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
