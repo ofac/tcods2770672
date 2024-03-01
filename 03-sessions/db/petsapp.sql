@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-03-2024 a las 13:49:18
+-- Tiempo de generación: 01-03-2024 a las 17:27:00
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -73,7 +73,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `document`, `fullname`, `photo`, `phone`, `email`, `password`, `role`) VALUES
-(1, 75000001, 'Jeremias Springfield', 'ico-user.svg', '312000001', 'jeremias@gmail.com', '$2y$10$e9643Jde.Ky1m7D1kArpl.P75Fq24tG3cOrd.aQPP4un7TZlkWjJa', 'Admin');
+(1, 75000001, 'Jeremias Springfield', 'jeremias.png', '312000001', 'jeremias@gmail.com', '$2y$10$e9643Jde.Ky1m7D1kArpl.P75Fq24tG3cOrd.aQPP4un7TZlkWjJa', 'Admin'),
+(5, 75000002, 'John Wick', '1709301260.png', '320000002', 'johnw@gmail.com', '$2y$10$gEBmgefNEy/eNeLpXRYcSeZoyjTxJyUdXhq/D4L/kiFhBJVLD/ady', 'Customer');
 
 --
 -- Índices para tablas volcadas
@@ -107,7 +108,7 @@ ALTER TABLE `pets`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
