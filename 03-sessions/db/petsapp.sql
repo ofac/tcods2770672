@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-02-2024 a las 14:22:39
+-- Tiempo de generación: 01-03-2024 a las 13:49:18
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -61,18 +61,19 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `document` bigint(12) NOT NULL,
   `fullname` varchar(32) NOT NULL,
-  `photo` varchar(64) DEFAULT 'ico-pet.svg',
+  `photo` varchar(64) DEFAULT 'ico-user.svg',
   `phone` varchar(16) NOT NULL,
   `email` varchar(32) NOT NULL,
-  `password` varchar(64) NOT NULL
+  `password` varchar(64) NOT NULL,
+  `role` varchar(32) NOT NULL DEFAULT 'Customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `document`, `fullname`, `photo`, `phone`, `email`, `password`) VALUES
-(1, 75000001, 'Jeremias Springfield', 'ico-pet.svg', '312000001', 'jeremias@gmail.com', '$2y$10$e9643Jde.Ky1m7D1kArpl.P75Fq24tG3cOrd.aQPP4un7TZlkWjJa');
+INSERT INTO `users` (`id`, `document`, `fullname`, `photo`, `phone`, `email`, `password`, `role`) VALUES
+(1, 75000001, 'Jeremias Springfield', 'ico-user.svg', '312000001', 'jeremias@gmail.com', '$2y$10$e9643Jde.Ky1m7D1kArpl.P75Fq24tG3cOrd.aQPP4un7TZlkWjJa', 'Admin');
 
 --
 -- Índices para tablas volcadas
