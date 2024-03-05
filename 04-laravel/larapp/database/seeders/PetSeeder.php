@@ -15,6 +15,17 @@ class PetSeeder extends Seeder
     {
         // Add a record with Eloquent ORM
         $pet = new Pet;
+        $pet->name     = "Firulais";
+        $pet->photo    = "1708984846.png";
+        $pet->kind     = "Dog";
+        $pet->weight   = 5;
+        $pet->age      = 3;
+        $pet->breed    = "Galgo";
+        $pet->location = "Manizales";
+        $pet->save();
+        
+        // Add a record with Eloquent ORM
+        $pet = new Pet;
         $pet->name     = "Pocholo";
         $pet->photo    = "1708697222.png";
         $pet->kind     = "Dog";
@@ -23,5 +34,16 @@ class PetSeeder extends Seeder
         $pet->breed    = "Pug";
         $pet->location = "Manizales";
         $pet->save();
+
+        // Add a record with Eloquent ORM
+        $pet = new Pet;
+        $pet->name     = "Michi";
+        $pet->kind     = "Cat";
+        $pet->weight   = 8;
+        $pet->age      = 2;
+        $pet->breed    = "Persa";
+        $pet->location = "Pereira";
+        $pet->save();
+
     }
 }

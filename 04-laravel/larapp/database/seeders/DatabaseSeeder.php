@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
             PetSeeder::class
         ]);
 
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(50)->create();
+
+        $this->call([AdoptionSeeder::class]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
