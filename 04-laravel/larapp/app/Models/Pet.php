@@ -19,7 +19,7 @@ class Pet extends Model
         'location'
     ];
 
-    // RelationShip
+    // RelationShip: (Pet has one adoption)
     public function adoption() {
         return $this->hasOne('App\Models\Adoption');
     }

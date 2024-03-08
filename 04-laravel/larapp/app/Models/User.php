@@ -49,7 +49,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    // RelationShip
+    // RelationShip: (User has many adoptions)
     public function adoptions() {
         return $this->hasMany('App\Models\Adoption');
     }

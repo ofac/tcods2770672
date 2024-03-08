@@ -14,10 +14,11 @@ class Adoption extends Model
         'pet_id'
     ];
 
-    // RelationShip
+    // RelationShip: (Adoption belongs to User)
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+    // RelationShip: (Adoption belongs to Pet)
     public function pet() {
         return $this->belongsTo('App\Models\Pet');
     }
