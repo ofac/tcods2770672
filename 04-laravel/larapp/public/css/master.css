@@ -97,7 +97,7 @@ main {
             margin-top: 40px;
             margin-bottom: 1rem;
 
-            input, button {
+            input, select, button {
                 outline: none;
                 border: none;
                 border-radius: 50px;
@@ -105,7 +105,7 @@ main {
                 width: 380px;
             }
 
-            input {
+            input, select {
                 background-color: #fffb;
                 color: var(--color-pri);
                 font-size: 20px;
@@ -120,6 +120,12 @@ main {
                 &:focus {
                     background-color: #fff;
                 }
+            }
+
+            select {
+                background: #fffb url(../images/arrow-select.png) no-repeat 340px center;
+                appearance: none;
+                width: 380px;
             }
 
             button {
@@ -466,6 +472,74 @@ main {
         background-color: var(--color-pri);
         cursor: pointer;
         color: #fff;
+    }
+
+
+    div.menu {
+        background-color: var(--color-pri);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        top: -800px;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        justify-content: center;
+        min-height: 100vh;
+        transition: all 0.5s ease-in;
+        width: 440px;
+
+        a:is(:link, :visited) {
+            border-radius: 50px;
+            color: #fff;
+            font-size: 2rem;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        a.closem {
+            position: absolute;
+            top: 44px;
+            right: 0px;
+        }
+
+        nav {
+            color: #fff9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                border: 2px solid #fff;
+                border-radius: 60%;
+                object-fit: cover;
+                height: 200px;
+                width: 200px;
+            }
+
+            h4, h5 {
+                margin: 0;
+            }
+
+            button.closes {
+                border: 2px solid #fff;
+                border-radius: 50px;
+                background-color: var(--color-pri);
+                color: #fff;
+                cursor: pointer;
+                font-size: 2rem;
+                padding: 10px 20px;
+                text-decoration: none;
+            }
+        }
+    }
+    div.menu.open {
+        top: 0;
+        opacity: 1;
     }
     
 }
