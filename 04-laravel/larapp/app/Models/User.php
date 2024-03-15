@@ -51,6 +51,7 @@ class User extends Authenticatable
 
     // RelationShip: (User has many adoptions)
     public function adoptions() {
-        return $this->hasMany('App\Models\Adoption');
+        //return $this->hasMany('App\Models\Adoption');
+        return $this->hasMany(Adoption::class);
     }
 }

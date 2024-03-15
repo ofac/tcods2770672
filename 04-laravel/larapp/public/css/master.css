@@ -192,6 +192,13 @@ main {
         }
     }
 
+    header.nav.level-2   {
+        a:last-of-type {
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
     /* - - - - - - - - - - - - - - - - - - - - - - */
     /* D A S H B O A R D */
     section.dashboard {
@@ -540,6 +547,45 @@ main {
     div.menu.open {
         top: 0;
         opacity: 1;
+    }
+
+    table {
+        tfoot {
+            nav {
+                ul.pagination {
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    li {
+                        a:is(:link, :visited) {
+                            border: 2px solid #fff;
+                            border-radius: 30px;
+                            color: #fff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 2rem;
+                            text-decoration: none;
+                            transition: all 0.2s ease-in;
+                            height: 50px;
+                            width: 50px;
+                        }
+                        a[rel=prev]:hover {
+                            background-color: #fff3;
+                            transform: translateX(-6px);
+                        }
+                        a[rel=next]:hover {
+                            background-color: #fff3;
+                            transform: translateX(6px);
+                        }
+                    }
+                    li.disabled {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
     }
     
 }
