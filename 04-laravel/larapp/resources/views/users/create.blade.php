@@ -12,7 +12,7 @@
     </a>
 </header>
 <section class="register create">
-    <form action="{{ route('users.create') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <img src="{{ asset('images/ico-upload-user.svg') }}" id="upload" width="240px" alt="Upload">
         <input type="file" name="photo" id="photo" accept="image/*">

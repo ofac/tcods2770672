@@ -15,6 +15,7 @@ class UserController extends Controller
     {
         //$users = User::all();
         //$users = User::simplePaginate(10);
+        //$users = User::latest()->get();
         $users = User::paginate(10);
         return view('users.index')->with('users', $users);
     }
@@ -32,7 +33,42 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $validated = $request->validate([
+            'document'  => ['required', 'numeric', 'unique:'.User::class],
+            'fullname'  => ['required', 'string', 'max:64'],
+            'gender'    => ['required'],
+            'birthdate' => ['required', 'date'],
+            'photo'     => ['required', 'image'],
+            'phone'     => ['required'],
+            'email'     => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password'  => ['required', 'confirmed'],
+        ]);
+
+        if ($validated) {
+            // Upload File
+            if ($request->hasFile('photo')) {
+                $photo = time() . '.' . $request->photo->extension();
+                $request->photo->move(public_path('images'), $photo);
+            }
+    
+            $user = User::create([
+                'document'  => $request->document,
+                'fullname'  => $request->fullname,
+                'gender'    => $request->gender,
+                'birthdate' => $request->birthdate,
+                'photo'     => $photo,
+                'phone'     => $request->phone,
+                'email'     => $request->email,
+                'password'  => bcrypt($request->password),
+            ]);
+
+            if ($user) {
+                return redirect('users')->with('message', 'The user: '.$request->fullname.' was successfully added!');
+            }
+
+        }
+
     }
 
     /**
@@ -40,7 +76,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        dd($user->toArray());
+        //return view('users.show')->with('user', $user);
     }
 
     /**

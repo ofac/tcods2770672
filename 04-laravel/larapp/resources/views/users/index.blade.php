@@ -53,3 +53,20 @@
     </table>
 </section>
 @endsection
+
+@section('js')
+    @if (session('message'))
+        <script>
+        $(document).ready(function () {
+            Swal.fire({
+                position: "top-end",
+                title: "Great job!",
+                text: "{{ session('message') }}",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 5000
+            })
+        })
+        </script>
+    @endif
+@endsection
