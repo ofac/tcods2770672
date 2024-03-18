@@ -309,7 +309,6 @@ main {
                         }
                         a:is(:hover) img {
                             transform: scale(1);
-
                         }
 
                     }
@@ -329,6 +328,23 @@ main {
                             font-weight: 300;
                             font-size: 14px;
                         }
+                    }
+                    td:nth-child(3) {
+                        display: flex;
+                        form {
+                            margin: 0;
+                            padding: 0;
+                            button {
+                                background: none;
+                                border: none;
+                                display: block;
+                                height: 40px;
+                                cursor: pointer;
+                                width: 40px;
+                                padding: 0;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -382,6 +398,10 @@ main {
             height: 280px;
             width: 280px;
         }
+        p.role {
+            color: #fff;
+            font-size: 1.4rem;
+        }
         div.info {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -391,7 +411,7 @@ main {
 
             p {
                 border-radius: 50px;
-                font-size: 18px;
+                font-size: 16px;
                 background-color: var(--color-frd);
                 padding: 10px;
                 margin: 0;

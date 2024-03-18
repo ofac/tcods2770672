@@ -35,9 +35,13 @@
                     <a href="{{ url('users/' . $user->id . '/edit') }}" class="edit">
                         <img src="{{ asset('images/ico-edit.svg') }}" alt="Edit">
                     </a>
-                    <a href="javascript:;" class="delete" data-id="{{ $user->id }}">
-                        <img src="{{ asset('images/ico-delete.svg') }}" alt="Delete">
-                    </a>
+                    <form action="{{ url('users/'.$user->id) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="button" class="btn-delete">
+                            <img src="{{ asset('images/ico-delete.svg') }}" alt="Delete">
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
@@ -69,4 +73,24 @@
         })
         </script>
     @endif
+
+    <script>
+        $(document).ready(function () {
+            $('body').on('click', '.btn-delete', function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#1f7a8c",
+                    cancelButtonColor: "#1f7a8c",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                        if (result.isConfirmed) {
+                            $(this).parent().submit()
+                        }
+                    })
+                })
+            })
+    </script>
 @endsection
