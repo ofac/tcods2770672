@@ -340,8 +340,13 @@ main {
                                 display: block;
                                 height: 40px;
                                 cursor: pointer;
+                                transform: scale(0.9);
+                                transition: all 0.2s ease-in;
                                 width: 40px;
                                 padding: 0;
+                                &:hover {
+                                    transform: scale(1);
+                                }
                             }
                         }
                         
