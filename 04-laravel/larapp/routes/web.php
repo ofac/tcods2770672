@@ -64,6 +64,13 @@ Route::middleware('auth')->group(function () {
         'pets'      => PetController::class,
         'adoptions' => AdoptionController::class
     ]);
+    // Customer
+    Route::get('mydata', [UserController::class, 'mydata']);
+    Route::get('myadoptions', [AdoptionController::class, 'myadoptions']);
+    Route::get('myadoptions/add/{id}', [AdoptionController::class, 'add']);
+    Route::post('myadoptions/store', [AdoptionController::class, 'store']);
+
+
 });
 
 

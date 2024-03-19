@@ -463,7 +463,11 @@ main {
                 align-items: center;
                 justify-content: center;
                 img {
+                    border-radius: 60px;
+                    border: 2px solid #fff;
                     margin-top: 0;
+                    object-fit: cover;
+                    height: 80px;
                     width: 80px;
                 }
                 p {
@@ -630,6 +634,12 @@ main {
                 }
             }
         }
+    }
+
+    p.no-adoptions {
+        margin-top: 2rem;
+        color: #fff;
+        text-align: center;
     }
     
 }

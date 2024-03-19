@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adoption;
+use App\Models\Pet;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdoptionController extends Controller
 {
@@ -21,7 +23,15 @@ class AdoptionController extends Controller
      */
     public function create()
     {
-        //
+        $adps = Adoption::all();
+        $idp  = array();
+        foreach($adps as $adp) {
+            $idp[] = $adp->pet_id;
+        }
+        //dd($idp);
+        $pets = Pet::whereNotIn('id', $idp)->get();
+        //dd($pets->toArray());
+        return view('adoptions.create')->with('pets', $pets);
     }
 
     /**
@@ -29,7 +39,13 @@ class AdoptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $adp = new Adoption;
+        $adp->user_id = $request->user_id;
+        $adp->pet_id  = $request->pet_id;
+
+        if ($adp->save()) {
+            return redirect('myadoptions')->with('message', 'The Adoption was successfully!');
+        }
     }
 
     /**
@@ -62,5 +78,19 @@ class AdoptionController extends Controller
     public function destroy(Adoption $adoption)
     {
         //
+    }
+
+    public function myadoptions() 
+    {
+        $adps = Adoption::where('user_id', Auth::user()->id)->get();
+        //dd($adps->toArray());
+        return view('adoptions.myadoptions')->with('adps', $adps);
+    }
+
+
+    public function add(Request $request) {
+        $pet = Pet::find($request->id);
+        //dd($pet->toArray());
+        return view('adoptions.add')->with('pet', $pet);
     }
 }
