@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PetController;
+use App\Http\Controllers\AdoptionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,8 +61,8 @@ Route::middleware('auth')->group(function () {
     // Resources
     Route::resources([
         'users'     => UserController::class,
-        //'pets'      => PetController::class,
-        //'adoptions' => AdoptionController::class
+        'pets'      => PetController::class,
+        'adoptions' => AdoptionController::class
     ]);
 });
 

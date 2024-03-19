@@ -66,9 +66,7 @@ class UserController extends Controller
             if ($user) {
                 return redirect('users')->with('message', 'The user: '.$request->fullname.' was successfully added!');
             }
-
         }
-
     }
 
     /**
@@ -130,7 +128,6 @@ class UserController extends Controller
             if ($user->save()) {
                 return redirect('users')->with('message', 'The user: '.$request->fullname.' was successfully edited!');
             }
-
         }
     }
 

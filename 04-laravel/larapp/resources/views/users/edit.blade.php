@@ -12,6 +12,7 @@
     </a>
 </header>
 <section class="register create">
+    <h1>Edit User</h1>
     <form action="{{ url('users/'.$user->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
