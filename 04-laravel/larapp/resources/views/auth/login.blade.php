@@ -17,6 +17,7 @@
         <input type="password" name="password" placeholder="Password">
         <button type="submit">Login</button>
     </form>
+    <a class="forgot" href="{{ url('forgot-password') }}">Forgot your password ?</a>
 </section>    
 @endsection
 

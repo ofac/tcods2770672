@@ -641,6 +641,13 @@ main {
         color: #fff;
         text-align: center;
     }
+
+    a.forgot:is(:link, :hover) {
+        color: #fff;
+        text-decoration: none;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #fff9;
+    }
     
 }
 
